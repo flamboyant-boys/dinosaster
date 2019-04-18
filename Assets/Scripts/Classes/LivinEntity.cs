@@ -3,12 +3,11 @@ using System;
 
 namespace Characters
 {
-    public class LivinEntity
+    public abstract class LivinEntity
     {
         private string id;
         private string name;
         private float percentage;
-        private float hitPercentage;
 
         /// <summary>
         /// Create a living entity with base stats.
@@ -18,15 +17,13 @@ namespace Characters
             this.id = generateID("TmpDino");
             this.name = id;
             this.percentage = 0.0f;
-            this.hitPercentage = 10.0f;
         }
 
         /// <summary>
         /// Create a living entity with given stats
         /// </summary>
         /// <param name="name">Name of the entity</param>
-        /// <param name="hitPercentage">How much damage the attacks deal</param>
-        public LivinEntity(string name, float hitPercentage)
+        public LivinEntity(string name)
         {
             if (String.IsNullOrEmpty(name))
             {
@@ -40,7 +37,6 @@ namespace Characters
             this.id = generateID(name);
             this.name = name;
             this.percentage = 0;
-            this.hitPercentage = hitPercentage;
         }
 
         /// <summary>
@@ -53,7 +49,6 @@ namespace Characters
             ret.AppendLine("ID: " + id);
             ret.AppendLine("Name: " + name);
             ret.AppendLine("Percentage: " + percentage.ToString());
-            ret.AppendLine("Hit percentage: " + hitPercentage.ToString());
 
             return ret.ToString();
         }
@@ -79,10 +74,6 @@ namespace Characters
 
         public float Percentage {
             get { return percentage; }
-        }
-
-        public float HitPercentage {
-            get { return hitPercentage; }
         }
         #endregion
     }
