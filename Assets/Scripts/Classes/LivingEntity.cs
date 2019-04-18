@@ -3,7 +3,7 @@ using System;
 
 namespace Characters
 {
-    public abstract class LivinEntity
+    public abstract class LivingEntity
     {
         private string id;
         private string name;
@@ -12,7 +12,7 @@ namespace Characters
         /// <summary>
         /// Create a living entity with base stats.
         /// </summary>
-        public LivinEntity()
+        public LivingEntity()
         {
             this.id = generateID("TmpDino");
             this.name = id;
@@ -23,7 +23,7 @@ namespace Characters
         /// Create a living entity with given stats
         /// </summary>
         /// <param name="name">Name of the entity</param>
-        public LivinEntity(string name)
+        public LivingEntity(string name)
         {
             if (String.IsNullOrEmpty(name))
             {

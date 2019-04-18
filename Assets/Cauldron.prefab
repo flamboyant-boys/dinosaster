@@ -95,7 +95,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
 --- !u!114 &8609254064788210788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +108,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be1196df1203c045a62d8c53d78c171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 8803935030029699957}
+  filter:
+    useTriggers: 1
+    useLayerMask: 0
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 0
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!50 &-2305854755797542975
 Rigidbody2D:
   serializedVersion: 4
