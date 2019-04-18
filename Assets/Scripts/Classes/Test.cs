@@ -5,7 +5,7 @@ using Characters;
 
 public class Test : MonoBehaviour
 {
-    LivinEntity test = new LivinEntity("Testosaurus", 10f);
+    //LivinEntity test = new LivinEntity("Testosaurus", 10f);
 
     // Start is called before the first frame update
     void Start()
