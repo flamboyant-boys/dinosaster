@@ -40,6 +40,22 @@ namespace Characters
             this.percentage = 0;
         }
 
+        public void Init(string name)
+        {
+            if (String.IsNullOrEmpty(name))
+            {
+                throw new ArgumentNullException();
+            }
+            else
+            {
+                name = name.Trim();
+            }
+
+            this.id = generateID(name);
+            this.name = name;
+            this.percentage = 0;
+        }
+
         /// <summary>
         /// Summary of the Class
         /// </summary>

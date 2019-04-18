@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: BasicAttack
   damage: 10
-  knockbackStrength: 150
+  knockbackStrength: 80
   filter:
     useTriggers: 1
     useLayerMask: 0

@@ -12,7 +12,9 @@ namespace Characters
         private CauldronThrow cauldronThrowAttack;
         public ContactFilter2D filter;
 
-        private void Start()
+        public bool allowPickup = false;
+
+        private void Awake()
         {
             col = GetComponent<Collider2D>();
             rgbd = GetComponent<Rigidbody2D>();
@@ -21,10 +23,9 @@ namespace Characters
         public void startThrowing(CauldronThrow cauldronThrowAttack)
         {
             this.cauldronThrowAttack = cauldronThrowAttack;
-            col.enabled = false;
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if(rgbd.velocity.x <= 0.1f && rgbd.velocity.y <= 0.1f)
             {
@@ -32,21 +33,19 @@ namespace Characters
 
                 StartKnockback();
             }
-        }
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.transform.name.Equals(cauldronThrowAttack.ParentTransform.name))
+            if(allowPickup == true)
             {
-                cauldronThrowAttack.CollectCauldron();
-                Destroy(this.gameObject);
+                if(Vector2.Distance(transform.position, cauldronThrowAttack.ParentTransform.position) <= 0.8f)
+                {
+                    cauldronThrowAttack.CanThrow = true;
+                    Destroy(this.gameObject);  
+                }
             }
         }
 
         private void StartKnockback()
         {
-            col.enabled = true;
-
             List<Collider2D> results = new List<Collider2D>();
             int count = col.OverlapCollider(filter, results);
 
@@ -67,6 +66,8 @@ namespace Characters
                     }
                 }
             }
+
+            allowPickup = true;
         }
 
     }

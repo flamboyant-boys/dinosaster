@@ -14,6 +14,7 @@ namespace Characters
         [SerializeField] SinputSystems.InputDeviceSlot slot;
 
         private bool blockSpecial = false;
+        private bool blockBasic = false;
 
         void IDamagable.die(GameObject damageDealer)
         {
@@ -30,6 +31,7 @@ namespace Characters
             baseAttack.Init(this.gameObject.transform, attackCollider);
             specialAttack.Init(this.gameObject.transform, attackCollider);
 
+            Init("Cooksaur");
         }
 
         private void Update()
@@ -41,15 +43,17 @@ namespace Characters
 
             if (Sinput.GetButton("SpecialAttack", slot))
             {
-                blockSpecial = true;
+                blockBasic = true;
                 specialAttack.Attack();
             }
 
             if (Sinput.GetButtonUp("SpecialAttack", slot))
             {
                 specialAttack.AttackEnd();
-                blockSpecial = false;
+                blockBasic = false;
             }
+
+
         }
 
         private void OnDrawGizmos()

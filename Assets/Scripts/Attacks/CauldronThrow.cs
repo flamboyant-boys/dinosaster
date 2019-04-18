@@ -10,11 +10,11 @@ namespace Characters
         [SerializeField] private GameObject cauldron;
         [SerializeField] private float throwMultiplayer;
         private float strength = 0f;
-        public bool hasCauldron = true;
+        private bool canThrow = true;
 
         public override void Attack()
         {
-            if (!hasCauldron) return;
+            if (!canThrow) return;
 
             strength += throwMultiplayer;
             base.Attack();
@@ -22,10 +22,13 @@ namespace Characters
 
         public override void AttackEnd()
         {
-            if (!hasCauldron) return;
+            if (!canThrow) return;
 
-            hasCauldron = false;
+            canThrow = false;
+
             GameObject cauldronInstance = Instantiate(cauldron, parentObject.transform.position, Quaternion.identity) as GameObject;
+            cauldronInstance.name = parentObject.GetComponent<LivingEntity>().ID;
+
             if(cauldronInstance.GetComponent<Rigidbody2D>() != null)
             {   
                 Vector2 direction = parentObject.transform.up * strength;
@@ -38,14 +41,15 @@ namespace Characters
             base.AttackEnd();
         }
 
-        public void CollectCauldron()
-        {
-            hasCauldron = true;
+        public bool CanThrow {
+            get { return canThrow; }
+            set { canThrow = value; }
         }
 
         public Transform baseObject {
             get { return parentObject; }
         }
+
     }
 }
 
