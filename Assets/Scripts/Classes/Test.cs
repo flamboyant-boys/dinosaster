@@ -5,17 +5,20 @@ using Characters;
 
 public class Test : MonoBehaviour
 {
-    //LivinEntity test = new LivinEntity("Testosaurus", 10f);
+    public BasicAttack attack;
+    public Collider2D attackCol;
 
-    // Start is called before the first frame update
     void Start()
     {
         //Debug.Log(test.ToString());
+        attack.Init(this.transform, attackCol);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            attack.Attack();
+        }
     }
 }

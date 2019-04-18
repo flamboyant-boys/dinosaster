@@ -18,12 +18,12 @@ namespace Characters
         
         }
 
-        void IDamagable.die(LivinEntity damageDealer)
+        void IDamagable.die(GameObject damageDealer)
         {
             throw new System.NotImplementedException();
         }
 
-        void IDamagable.getDamage(LivinEntity damageDealer, float damage)
+        void IDamagable.getDamage(GameObject damageDealer, float damage)
         {
             throw new System.NotImplementedException();
         }
