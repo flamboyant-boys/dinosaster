@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Movement playerMovement;
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] SinputSystems.InputDeviceSlot slot;
-    [SerializeField] SinputSystems.InputDeviceType deviceType;
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
@@ -36,8 +35,8 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
-        if(deviceType == SinputSystems.InputDeviceType.GamepadAxis)
             playerMovement.move(Sinput.GetAxis("Horizontal"), Sinput.GetAxis("Vertical"));
+
     }
 }
 
