@@ -6,10 +6,12 @@ namespace Characters
 {
     public abstract class BaseAttack : ScriptableObject
     {
-       [SerializeField] protected string attackName;
-       [SerializeField] protected float damage;
-       [SerializeField] protected float knockbackStrength;
-       [SerializeField] protected float attackRange;
+        [SerializeField] protected string attackName;
+        [SerializeField] protected float damage;
+        [SerializeField] protected float knockbackStrength;
+        [SerializeField] protected Vector2 attackRange;
+        protected Transform parentObject;
+        protected Collider2D attackCollider;
 
         /// <summary>
         /// Create a base attack with base values
@@ -28,7 +30,7 @@ namespace Characters
         /// <param name="damage">The damagle dealt by this attack</param>
         /// <param name="knockbackStrength">Knockback strength of the attack</param>
         /// <param name="attackRange">Attack range of the attack</param>
-        public BaseAttack(string attackName, float damage, float knockbackStrength, float attackRange)
+        public BaseAttack(string attackName, float damage, float knockbackStrength, Vector2 attackRange)
         {
             if(String.IsNullOrEmpty(attackName))
             {
@@ -51,7 +53,7 @@ namespace Characters
         public override string ToString()
         {
             StringBuilder ret = new StringBuilder();
-            ret.Append("Attack: Name: " + attackName).Append(", Damage: " + damage.ToString()).Append(", KnockbackStrenght: " + knockbackStrength).Append(", AttackRange: " + attackRange);
+            ret.Append("Attack: Name: " + attackName).Append(", Damage: " + damage.ToString()).Append(", KnockbackStrenght: " + knockbackStrength).Append(", AttackRange: " + attackRange.x + "/"+ attackRange.y);
             return ret.ToString();
         }
 
@@ -59,6 +61,17 @@ namespace Characters
         /// Execute the attack
         /// </summary>
         public abstract void Attack();
+
+        /// <summary>
+        /// Init the attack
+        /// </summary>
+        /// <param name="parentObject">Attack Origin</param>
+        /// <param name="attackCollider">Attack Collider</param>
+        public virtual void Init(Transform parentObject, Collider2D attackCollider)
+        {
+            this.parentObject = parentObject;
+            this.attackCollider = attackCollider;
+        }
 
         #region Getter&Setter
         public string AttackName {
@@ -73,7 +86,7 @@ namespace Characters
             get { return knockbackStrength; }
         }
 
-        public float AttackRange {
+        public Vector2 AttackRange {
             get { return attackRange; }
         }
         #endregion
