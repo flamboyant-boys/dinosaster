@@ -15,6 +15,8 @@ namespace Characters
             List<Collider2D> results = new List<Collider2D>();
             int count = attackCollider.OverlapCollider(filter, results);
 
+            if (count <= 0) return;
+
             foreach(Collider2D col in results)
             {
                 // Check if its the same collider as the parentObj

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Movement playerMovement;
@@ -19,24 +20,16 @@ public class PlayerController : MonoBehaviour
         playerMovement.MovingObject = playerRigidbody;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         move();
-
+            
     }
 
     void move()
     {
-            playerMovement.move(Sinput.GetAxis("Horizontal"), Sinput.GetAxis("Vertical"));
-
+        playerMovement.move(Sinput.GetAxis("Horizontal"), Sinput.GetAxis("Vertical"));
     }
 }
 

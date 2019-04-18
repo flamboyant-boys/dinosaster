@@ -1,13 +1,14 @@
 ﻿using System.Text;
 using System;
+using UnityEngine;
 
 namespace Characters
 {
-    public abstract class LivingEntity
+    public class LivingEntity : MonoBehaviour
     {
         private string id;
-        private string name;
-        private float percentage;
+        protected string name;
+        protected float percentage;
 
         /// <summary>
         /// Create a living entity with base stats.

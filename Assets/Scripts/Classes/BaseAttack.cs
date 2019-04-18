@@ -9,7 +9,6 @@ namespace Characters
         [SerializeField] protected string attackName;
         [SerializeField] protected float damage;
         [SerializeField] protected float knockbackStrength;
-        [SerializeField] protected Vector2 attackRange;
         protected Transform parentObject;
         protected Collider2D attackCollider;
 
@@ -35,8 +34,7 @@ namespace Characters
         /// <param name="attackName">attackName of the attack</param>
         /// <param name="damage">The damagle dealt by this attack</param>
         /// <param name="knockbackStrength">Knockback strength of the attack</param>
-        /// <param name="attackRange">Attack range of the attack</param>
-        public BaseAttack(string attackName, float damage, float knockbackStrength, Vector2 attackRange)
+        public BaseAttack(string attackName, float damage, float knockbackStrength)
         {
             if(String.IsNullOrEmpty(attackName))
             {
@@ -49,7 +47,6 @@ namespace Characters
             this.attackName = attackName;
             this.damage = damage;
             this.knockbackStrength = knockbackStrength;
-            this.attackRange = attackRange;
         }
 
         /// <summary>
@@ -59,7 +56,7 @@ namespace Characters
         public override string ToString()
         {
             StringBuilder ret = new StringBuilder();
-            ret.Append("Attack: Name: " + attackName).Append(", Damage: " + damage.ToString()).Append(", KnockbackStrenght: " + knockbackStrength).Append(", AttackRange: " + attackRange.x + "/"+ attackRange.y);
+            ret.Append("Attack: Name: " + attackName).Append(", Damage: " + damage.ToString()).Append(", KnockbackStrenght: " + knockbackStrength);
             return ret.ToString();
         }
 
@@ -103,8 +100,8 @@ namespace Characters
             get { return knockbackStrength; }
         }
 
-        public Vector2 AttackRange {
-            get { return attackRange; }
+        public Transform ParentTransform {
+            get { return parentObject; }
         }
         #endregion
     }

@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChargeAttack : MonoBehaviour
+namespace Characters
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "ChargeAttack", menuName = "Attacks/ChargeAttack", order = 3)]
+    public class ChargeAttack : BaseAttack
     {
-        
-    }
+        public override void Attack()
+        {
+            base.Attack();
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void AttackEnd()
+        {
+
+            base.AttackEnd();
+        }
     }
 }
+
+

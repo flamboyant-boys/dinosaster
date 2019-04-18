@@ -9,19 +9,25 @@ namespace Characters
     {
         [SerializeField] private GameObject cauldron;
         [SerializeField] private float throwMultiplayer;
-        public float strength = 0f;
+        private float strength = 0f;
+        public bool hasCauldron = true;
 
         public override void Attack()
         {
+            if (!hasCauldron) return;
+
             strength += throwMultiplayer;
+            base.Attack();
         }
 
         public override void AttackEnd()
         {
+            if (!hasCauldron) return;
+
+            hasCauldron = false;
             GameObject cauldronInstance = Instantiate(cauldron, parentObject.transform.position, Quaternion.identity) as GameObject;
             if(cauldronInstance.GetComponent<Rigidbody2D>() != null)
-            {
-                
+            {   
                 Vector2 direction = parentObject.transform.up * strength;
 
                 cauldronInstance.GetComponent<Rigidbody2D>().AddForce(direction);
@@ -30,6 +36,11 @@ namespace Characters
 
             strength = 0;
             base.AttackEnd();
+        }
+
+        public void CollectCauldron()
+        {
+            hasCauldron = true;
         }
 
         public Transform baseObject {

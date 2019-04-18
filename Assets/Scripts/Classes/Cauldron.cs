@@ -21,6 +21,7 @@ namespace Characters
         public void startThrowing(CauldronThrow cauldronThrowAttack)
         {
             this.cauldronThrowAttack = cauldronThrowAttack;
+            col.enabled = false;
         }
 
         private void FixedUpdate()
@@ -33,8 +34,19 @@ namespace Characters
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.transform.name.Equals(cauldronThrowAttack.ParentTransform.name))
+            {
+                cauldronThrowAttack.CollectCauldron();
+                Destroy(this.gameObject);
+            }
+        }
+
         private void StartKnockback()
         {
+            col.enabled = true;
+
             List<Collider2D> results = new List<Collider2D>();
             int count = col.OverlapCollider(filter, results);
 
