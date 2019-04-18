@@ -9,4 +9,7 @@ public class CircleStage : BaseState
     [SerializeField] float morphTime = 20;
     [SerializeField] float idleTime = 10;
 
+    public float CircleRadius { get => circleRadius;}
+    public float MorphTime { get => morphTime;}
+    public float IdleTime { get => idleTime;}
 }
