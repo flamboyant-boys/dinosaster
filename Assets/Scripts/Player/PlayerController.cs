@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         move();
             
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
-        playerMovement.move(Sinput.GetAxis("Horizontal"), Sinput.GetAxis("Vertical"));
+        playerMovement.move(Sinput.GetAxis("Horizontal", slot), Sinput.GetAxis("Vertical", slot));
     }
 }
 

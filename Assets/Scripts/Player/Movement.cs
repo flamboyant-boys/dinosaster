@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour
     public void move(Vector2 direction)
     {
         MovingObject.velocity = direction *movementSpeed;
+        look(direction);
     }
     public void move(float horizontal, float vertical)
     {
@@ -35,4 +36,21 @@ public class Movement : MonoBehaviour
         move(right - left, up - down);
     }
 
+    public void look(Vector2 direction)
+    {
+        Debug.Log("Direction: " + direction);
+        float angle = 0;
+        if (direction.y >= 0)
+        {
+            angle = Vector2.Angle(Vector2.right, direction);
+            Debug.Log("Angle" + angle);
+            
+        }
+        else
+        {
+            angle = Vector2.Angle(Vector2.right, direction) * -1;
+        }
+        movingObject.MoveRotation(angle);
+
+    }
 }
