@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -32,19 +33,14 @@ MonoBehaviour:
     gamepadInputs: 120000000e000000
     mouseInputs: 
     virtualInputs: []
-  - name: Jump
-    keyboardInputs: 33000000
-    gamepadInputs: 01000000
-    mouseInputs: 
-    virtualInputs: []
-  - name: Fire1
-    keyboardInputs: 22000000
-    gamepadInputs: 08000000
+  - name: BasicAttack
+    keyboardInputs: 15000000
+    gamepadInputs: 02000000
     mouseInputs: 0c000000
     virtualInputs: []
-  - name: Fire2
-    keyboardInputs: 24000000
-    gamepadInputs: 06000000
+  - name: SpecialAttack
+    keyboardInputs: 09000000
+    gamepadInputs: 01000000
     mouseInputs: 0d000000
     virtualInputs: []
   - name: Fire3

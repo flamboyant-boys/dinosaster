@@ -17,4 +17,12 @@ public class PlayerManager : MonoBehaviour
     {
         
     }
+
+    public PlayerController joinPlayer(SinputSystems.InputDeviceSlot slot)
+    {
+        GameObject newPlayer = Instantiate(playerPrefab);
+        PlayerController pc = newPlayer.AddComponent<PlayerController>();
+        pc.initialize(slot, newPlayer.GetComponent<Rigidbody2D>());
+        return pc;
+    }
 }
