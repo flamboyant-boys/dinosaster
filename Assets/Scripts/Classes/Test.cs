@@ -5,20 +5,26 @@ using Characters;
 
 public class Test : MonoBehaviour
 {
-    public BasicAttack attack;
+    public BaseAttack attack;
     public Collider2D attackCol;
 
     void Start()
     {
         //Debug.Log(test.ToString());
         attack.Init(this.transform, attackCol);
+
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space))
         {
             attack.Attack();
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            attack.AttackEnd();
         }
     }
 }

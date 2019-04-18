@@ -13,6 +13,12 @@ namespace Characters
         protected Transform parentObject;
         protected Collider2D attackCollider;
 
+        public delegate void OnAttack();
+        public event OnAttack OnAttackEvent;
+
+        public delegate void OnAttackEnd();
+        public event OnAttackEnd OnAttackEndEvent;
+
         /// <summary>
         /// Create a base attack with base values
         /// </summary>
@@ -60,7 +66,18 @@ namespace Characters
         /// <summary>
         /// Execute the attack
         /// </summary>
-        public abstract void Attack();
+        public virtual void Attack()
+        {
+            //OnAttackEvent();
+        }
+
+        /// <summary>
+        /// Execute after attack end
+        /// </summary>
+        public virtual void AttackEnd()
+        {
+            //OnAttackEndEvent();
+        }
 
         /// <summary>
         /// Init the attack

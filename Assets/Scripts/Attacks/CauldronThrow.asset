@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d952dd50686b45c45bf7024f4fbf8ced, type: 3}
-  m_Name: asdad
+  m_Script: {fileID: 11500000, guid: a0207771726cee94da6ae4c41d8caf7d, type: 3}
+  m_Name: CauldronThrow
   m_EditorClassIdentifier: 
-  attackName: TmpAttack
+  attackName: CauldronThrow
   damage: 10
   knockbackStrength: 2
-  attackRange: 0
+  attackRange: {x: 0, y: 0}
+  cauldron: {fileID: 3889014292730370356, guid: 2e268b501fd36e942adf3ecf53d12c9a,
+    type: 3}
+  throwMultiplayer: 1
+  strength: 0
