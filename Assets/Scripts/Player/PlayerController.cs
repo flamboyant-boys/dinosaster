@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Movement playerMovement;
@@ -16,6 +17,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (playerMovement == null)
+        {
+            if (GetComponent<Movement>() == null)
+                playerMovement = gameObject.AddComponent<Movement>();
+            else
+                playerMovement = GetComponent<Movement>();
+        }
+
         playerMovement.MovingObject = playerRigidbody;
     }
 

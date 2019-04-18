@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7fd5a25d831e6d419a7ad01fc43ce8a, type: 3}
-  m_Name: CircleStageManager
+  m_Script: {fileID: 11500000, guid: 0aba4cd0b2bb21f478abc5f73a5018f8, type: 3}
+  m_Name: Circle Stage Manager
   m_EditorClassIdentifier: 
   possibleStates: []
-  currentState: {fileID: 0}
+  currentState: {fileID: 11400000, guid: 30ada61239aeecf438606741af854a14, type: 2}

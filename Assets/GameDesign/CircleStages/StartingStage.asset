@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: StartingStage
   m_EditorClassIdentifier: 
   description: This is a state
-  correspondingEvent: {fileID: 0}
-  circleRadius: 100
+  correspondingEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
+  circleRadius: 0.5
   morphTime: 20
+  idleTime: 10
