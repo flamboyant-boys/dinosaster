@@ -46,9 +46,7 @@ namespace Characters
         public override string ToString()
         {
             StringBuilder ret = new StringBuilder();
-            ret.AppendLine("ID: " + id);
-            ret.AppendLine("Name: " + name);
-            ret.AppendLine("Percentage: " + percentage.ToString());
+            ret.Append("LivingEntity: ").Append("ID: " + id).Append(", Name: " + name).Append(", Percentage: " + percentage.ToString());
 
             return ret.ToString();
         }
