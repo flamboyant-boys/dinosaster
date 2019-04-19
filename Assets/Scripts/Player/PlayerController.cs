@@ -15,14 +15,21 @@ public class PlayerController : MonoBehaviour, IDamagable
     IWarrior warrior;
 
     [Header("Damageable")]
+    [SerializeField] float originalMass = 5;
     [SerializeField] float currentPercent;
     [SerializeField] FloatReference maxPercent = new FloatReference(50);
-
+    [SerializeField] float debugMass = 5;
+ 
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
         this.slot = slot;
         playerRigidbody = playerObj;
+    }
+
+    float currMass()
+    {
+        return originalMass - ((originalMass-1)* (1 / maxPercent) * currentPercent);
     }
 
     private void OnEnable()
@@ -44,6 +51,7 @@ public class PlayerController : MonoBehaviour, IDamagable
                 playerMovement = GetComponent<Movement>();
         }
 
+        playerRigidbody.mass = currMass();
         playerMovement.MovingObject = playerRigidbody;
     }
 
@@ -109,6 +117,10 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         currentPercent += damage;
         Debug.Log("Got damage!");
+
+        debugMass = currMass();
+        playerRigidbody.mass = currMass();
+
         if(currentPercent > maxPercent.Value)
         {
             die(damageDealer);

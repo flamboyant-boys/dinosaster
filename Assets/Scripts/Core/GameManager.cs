@@ -93,6 +93,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void startCircleIdleState()
+    {
+        if (circleManager != null)
+        {
+            circleIdleTimeEnd = Time.time + circleManager.CurrentState.IdleTime;
+            changeCircle = true;
+        }
+        else
+        {
+            Debug.Log("GameManager needs circleManager.");
+        }
+    }
+
     private void Start()
     {
         startCircleIdleState();
@@ -105,18 +118,7 @@ public class GameManager : MonoBehaviour
         updateCircle();
     }
 
-    public void startCircleIdleState()
-    {
-        if(circleManager != null)
-        {
-            circleIdleTimeEnd = Time.time + circleManager.CurrentState.IdleTime;
-            changeCircle = true;
-        }
-        else
-        {
-            Debug.Log("GameManager needs circleManager.");
-        }
-    }
+
 
 
     public void OnPlayerDeath(PlayerController player)
@@ -136,4 +138,32 @@ public class GameManager : MonoBehaviour
     {
         m_ShuttingDown = true;
     }
+}
+
+
+public struct PlayerStats
+{
+    public PlayerStats(int totalLifes) 
+    {
+        this.playerName = "Default Player";
+        this.totalLifes = totalLifes;
+        currLifes = totalLifes;
+        kills = 0;
+    }
+    public PlayerStats(int totalLifes, string name)
+    {
+        this.playerName = name;
+        this.totalLifes = totalLifes;
+        currLifes = totalLifes;
+        kills = 0;
+    }
+
+    string playerName;
+    int totalLifes;
+    int currLifes;
+    int kills;
+    public int TotalLifes { get => totalLifes; set => totalLifes = value; }
+    public int CurrLifes { get => currLifes; set => currLifes = value; }
+    public int Kills { get => kills; set => kills = value; }
+    public string PlayerName { get => playerName; set => playerName = value; }
 }
