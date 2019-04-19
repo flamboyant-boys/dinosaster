@@ -18,6 +18,9 @@ namespace Characters
 
         private Movement movement;
 
+        private Animator animator;
+        private Rigidbody2D rb;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -27,6 +30,9 @@ namespace Characters
             movement = GetComponent<Movement>();
             movement.CanMove = true;
             movement.CanRotate = true;
+
+            animator = GetComponent<Animator>();
+            rb = GetComponent<Rigidbody2D>();
 
             chargeCollider.enabled = false;
         }
@@ -66,6 +72,15 @@ namespace Characters
             {
                 attackCollider.enabled = true;
                 chargeCollider.enabled = false;
+            }
+
+            if (Mathf.Round(rb.velocity.magnitude) >= -1 && Mathf.Round(rb.velocity.magnitude) <= 1)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+            else
+            {
+                animator.SetBool("IsMoving", true);
             }
         }
 
@@ -113,7 +128,7 @@ namespace Characters
             if (!blockBasic)
             {
                 baseAttack.Attack();
-                //animator.SetTrigger("BaseAttack");
+                animator.SetTrigger("BaseAttack");
             }
         }
 
@@ -123,6 +138,7 @@ namespace Characters
             movement.CanMove = false;
             specialAttack.Attack();
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            animator.SetTrigger("SpecialAttack");
         }
 
         public void endSpecialAttack()
