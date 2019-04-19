@@ -11,12 +11,16 @@ public class GameController : MonoBehaviour
     private List<Player> players = new List<Player>();
     public GameObject uiPrefab;
     public Transform uiParent;
-    public int maxStock = 3;
+    public GameObject winUI;
+
+    private bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
         GetPlayers();
+
+        winUI.SetActive(false);
     }
 
     public void GetPlayers()
@@ -26,12 +30,18 @@ public class GameController : MonoBehaviour
         {
             GameObject uiInstance = Instantiate(uiPrefab, uiParent);
             uiInstance.name = ent.Name + "_UI";
-            players.Add(new Player(ent.gameObject, maxStock, uiInstance));
+            players.Add(new Player(ent.gameObject, uiInstance));
         }
     }
 
-    public void playerDies(GameObject who) 
+    public void Win(LivingEntity who)
     {
+<<<<<<< HEAD
+        Time.timeScale = 0;
+
+        winUI.SetActive(true);
+        winUI.GetComponentInChildren<TextMeshProUGUI>().text = who.Name + " won!";
+=======
         Debug.Log(who.name + " Lost the Game!");
 
         //foreach(Player p in players)
@@ -41,6 +51,7 @@ public class GameController : MonoBehaviour
         //        p.decreaseStock(1);
         //    }
         //}
+>>>>>>> f52628938b1e08a1df807ed4acdb4373c20757e7
     }
 
     // Update is called once per frame
@@ -57,31 +68,22 @@ public class GameController : MonoBehaviour
 public struct Player
 {
     public GameObject characterPrefab;
-    public int stock;
     public GameObject ui;
 
     private LivingEntity character;
     private PlayerController controller;
     private TextMeshProUGUI percent;
-    private TextMeshProUGUI life;
 
 
-    public Player(GameObject characterPrefab, int stock, GameObject ui)
+    public Player(GameObject characterPrefab,  GameObject ui)
     {
         this.characterPrefab = characterPrefab;
-        this.stock = stock;
         this.ui = ui;
 
         character = characterPrefab.GetComponent<LivingEntity>();
         percent = ui.transform.Find("Percent").GetComponent<TextMeshProUGUI>();
-        life = ui.transform.Find("Life").GetComponent<TextMeshProUGUI>();
         ui.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = character.Name;
         controller = characterPrefab.GetComponent<PlayerController>();
-    }
-
-
-    public int Stock {
-        get { return stock; }
     }
 
     public LivingEntity LivingEntity {
@@ -95,19 +97,5 @@ public struct Player
     public void UpdateStats()
     {
         percent.text = controller.getCurrentPercent.ToString();
-        life.text = stock.ToString();
-
-    }
-
-    public bool decreaseStock(int ammount)
-    {
-        stock--;
-        if(stock <= 0)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
     }
 }

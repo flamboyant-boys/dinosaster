@@ -20,7 +20,8 @@ namespace Characters
         private Rigidbody2D rb;
 
 
-        private void Start()
+
+        private void Awake()
         {
             baseAttack.Init(this.gameObject.transform, attackCollider);
             specialAttack.Init(this.gameObject.transform, attackCollider);
