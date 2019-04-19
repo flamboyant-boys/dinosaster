@@ -22,14 +22,6 @@ public class Movement : MonoBehaviour
 
     public void move(Vector2 direction)
     {
-<<<<<<< HEAD
-        MovingObject.velocity = direction * movementSpeed;
-
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-=======
->>>>>>> 97607c942d790702e599bf1293420e56e935b560
         MovingObject.velocity = direction *movementSpeed;
         look(direction);
     }
@@ -51,6 +43,5 @@ public class Movement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         movingObject.MoveRotation(rotation);
-
     }
 }
