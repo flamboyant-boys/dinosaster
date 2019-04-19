@@ -18,7 +18,13 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] float originalMass = 5;
     [SerializeField] float currentPercent;
     [SerializeField] FloatReference maxPercent = new FloatReference(50);
-    [SerializeField] float debugMass = 5;
+
+    public Material flashWhiteMat;
+
+    public ParticleContainer particleContainer;
+
+    private Material baseMat;
+    private SpriteRenderer spriteRenderer;
  
 
     public void initialize(SinputSystems.InputDeviceSlot slot)
@@ -53,6 +59,9 @@ public class PlayerController : MonoBehaviour, IDamagable
 
         playerRigidbody.mass = currMass();
         playerMovement.MovingObject = playerRigidbody;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        baseMat = spriteRenderer.material;
     }
 
     // Update is called once per frame
@@ -115,10 +124,11 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void getDamage(GameObject damageDealer, float damage)
     {
+        StartCoroutine(DamageFX());
+
         currentPercent += damage;
         Debug.Log("Got damage!");
 
-        debugMass = currMass();
         playerRigidbody.mass = currMass();
 
         if(currentPercent > maxPercent.Value)
@@ -130,6 +140,37 @@ public class PlayerController : MonoBehaviour, IDamagable
     public void die(GameObject damageDealer)
     {
         GameManager.Instance.OnPlayerDeath(this);
+
+        if (GetComponent<Cooksaur>())
+        {
+            Instantiate(particleContainer.particleSystem1, transform.position, transform.rotation);
+        }
+        else if (GetComponent<Chargesaur>())
+        {
+            Instantiate(particleContainer.particleSystem2, transform.position, transform.rotation);
+        }
+
+    }
+
+    private IEnumerator DamageFX()
+    {
+        float flashTime = 0.06f;
+
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
     }
 }
 
