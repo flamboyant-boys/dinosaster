@@ -6,7 +6,15 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] FloatReference movementSpeed = new FloatReference(10);
     [SerializeField] Rigidbody2D movingObject;
-    Vector2 movVector;
+    Vector2 movVector = Vector2.zero;
+    bool canMove = true;
+    bool canRotate = true;
+
+    private void Start()
+    {
+        CanMove = true;
+        CanRotate = true;
+    }
 
     public Movement(Rigidbody2D movingObject)
     {
@@ -22,8 +30,16 @@ public class Movement : MonoBehaviour
 
     public void move(Vector2 direction)
     {
-        MovingObject.velocity = direction *movementSpeed;
-        look(direction);
+        if(canMove)
+        {
+            MovingObject.velocity = direction *movementSpeed;
+        }
+
+        if(canRotate)
+        {
+            look(direction);
+
+        }
     }
 
     public void move(float horizontal, float vertical)
@@ -43,5 +59,19 @@ public class Movement : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         movingObject.MoveRotation(rotation);
+    }
+
+    public Vector2 Direction {
+        get { return movVector; }
+    }
+
+    public bool CanMove {
+        get { return canMove; }
+        set { canMove = value; }
+    }
+
+    public bool CanRotate {
+        get { return canRotate; }
+        set { canRotate = value; }
     }
 }

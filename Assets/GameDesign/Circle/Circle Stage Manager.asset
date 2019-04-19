@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aba4cd0b2bb21f478abc5f73a5018f8, type: 3}
+  m_Name: Circle Stage Manager
+  m_EditorClassIdentifier: 
+  possibleStates:
+  - {fileID: 11400000, guid: 30ada61239aeecf438606741af854a14, type: 2}
+  - {fileID: 11400000, guid: ef2b912833b663d4bb518694e48d5bbe, type: 2}
+  - {fileID: 11400000, guid: 0ddf439d723dd3c4a9297d7d5404c0c1, type: 2}
+  currentState: {fileID: 11400000, guid: 0ddf439d723dd3c4a9297d7d5404c0c1, type: 2}

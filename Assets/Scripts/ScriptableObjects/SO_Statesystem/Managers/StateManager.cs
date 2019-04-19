@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-
 public class StateManager<T> : ScriptableObject {
 
-    public List<T> possibleStates = new List<T>();
+    [SerializeField] protected List<T> possibleStates = new List<T>();
     [SerializeField]
     protected T currentState;
 

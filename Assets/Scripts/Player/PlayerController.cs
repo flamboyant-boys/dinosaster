@@ -38,11 +38,15 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
+
         float horizontal, vertical;
         horizontal = Sinput.GetAxis("Horizontal", slot);
         vertical = Sinput.GetAxis("Vertical", slot);
         if(Mathf.Abs(horizontal) >= moveInputThreshhold || Mathf.Abs(vertical) >= moveInputThreshhold)
+        {
             playerMovement.move(Sinput.GetAxis("Horizontal", slot), Sinput.GetAxis("Vertical", slot));
+        }
+
     }
 }
 
