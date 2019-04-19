@@ -54,6 +54,8 @@ public class GameManager : MonoBehaviour
     float circleIdleTimeEnd = 0;
     bool changeCircle = false;
 
+    [SerializeField] List<PlayerController> players;
+
 
 
     public CircleStageManager GetCircleManager
@@ -105,12 +107,23 @@ public class GameManager : MonoBehaviour
 
     public void startCircleIdleState()
     {
-        circleIdleTimeEnd = Time.time + circleManager.CurrentState.IdleTime;
-        changeCircle = true;
+        if(circleManager != null)
+        {
+            circleIdleTimeEnd = Time.time + circleManager.CurrentState.IdleTime;
+            changeCircle = true;
+        }
+        else
+        {
+            Debug.Log("GameManager needs circleManager.");
+        }
     }
 
 
-
+    public void OnPlayerDeath(PlayerController player)
+    {
+        Debug.Log("Player" + player + " died!");
+        player.gameObject.SetActive(false);
+    }
 
 
     private void OnApplicationQuit()

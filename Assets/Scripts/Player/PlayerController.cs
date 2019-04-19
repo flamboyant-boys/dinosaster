@@ -4,7 +4,7 @@ using UnityEngine;
 using Characters;
 
 [RequireComponent(typeof(Movement))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamagable
 {
     [SerializeField] Movement playerMovement;
     [SerializeField] Rigidbody2D playerRigidbody;
@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     [Header("The Class:")]
     [SerializeField] LivingEntity character;
     IWarrior warrior;
+
+    [Header("Damageable")]
+    [SerializeField] float currentPercent;
+    [SerializeField] FloatReference maxPercent = new FloatReference(50);
+
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
@@ -83,6 +88,36 @@ public class PlayerController : MonoBehaviour
             playerMovement.move(Sinput.GetAxis("Horizontal", slot), Sinput.GetAxis("Vertical", slot));
         }
 
+    }
+
+    
+    public void resetCurrentPercent()
+    {
+        SetCurrentPercent = 0;
+    }
+
+    public float SetCurrentPercent
+    {
+        set
+        {
+            currentPercent = value;
+        }
+    }
+
+
+    public void getDamage(GameObject damageDealer, float damage)
+    {
+        currentPercent += damage;
+        Debug.Log("Got damage!");
+        if(currentPercent > maxPercent.Value)
+        {
+            die(damageDealer);
+        }
+    }
+
+    public void die(GameObject damageDealer)
+    {
+        GameManager.Instance.OnPlayerDeath(this);
     }
 }
 

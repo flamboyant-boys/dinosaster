@@ -42,28 +42,6 @@ namespace Characters
         {
             specialAttack.Direction = movement.Direction;
 
-            //if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
-            //{
-            //    baseAttack.Attack();
-            //}
-
-            //if (Sinput.GetButton("SpecialAttack", slot))
-            //{
-            //    blockBasic = true;
-            //    movement.CanMove = false;
-            //    specialAttack.Attack();
-            //    GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            //}
-
-            //if (Sinput.GetButtonUp("SpecialAttack", slot))
-            //{
-            //    StartCoroutine("StartChargeTimer");
-            //    specialAttack.AttackEnd();
-
-            //    movement.CanRotate = false;
-            //    blockBasic = false;
-            //}
-
             if(specialAttack.IsCharging)
             {
                 attackCollider.enabled = false;
@@ -149,6 +127,7 @@ namespace Characters
             movement.CanRotate = false;
             blockBasic = false;
         }
+
     }
 
 }
