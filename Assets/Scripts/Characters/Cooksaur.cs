@@ -35,10 +35,6 @@ namespace Characters
             specialAttack.Init(this.gameObject.transform, attackCollider);
             rb = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
-            GetComponent<Movement>().CanMove = true;
-            GetComponent<Movement>().CanRotate = true;
-            rb = this.GetComponent<Rigidbody2D>();
-            animator = this.GetComponent<Animator>();
 
             GetComponent<Movement>().CanMove = true;
             GetComponent<Movement>().CanRotate = true;
