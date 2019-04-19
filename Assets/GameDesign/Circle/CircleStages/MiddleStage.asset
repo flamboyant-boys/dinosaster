@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3c67de02e205cf42bf28315f30cd7b3, type: 3}
-  m_Name: StartingStage
+  m_Name: MiddleStage
   m_EditorClassIdentifier: 
   description: This is a state
   correspondingEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
-  circleRadius: 5
-  morphTime: 20
-  idleTime: 10
+  circleRadius: 8
+  morphTime: 1
+  idleTime: 2

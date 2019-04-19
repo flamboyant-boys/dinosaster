@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0aba4cd0b2bb21f478abc5f73a5018f8, type: 3}
-  m_Name: Circle Stage Manager
+  m_Script: {fileID: 11500000, guid: 0fa152c712678234d9df1fecf0692b4b, type: 3}
+  m_Name: MorphEndedEvent
   m_EditorClassIdentifier: 
-  possibleStates: []
-  currentState: {fileID: 11400000, guid: 30ada61239aeecf438606741af854a14, type: 2}

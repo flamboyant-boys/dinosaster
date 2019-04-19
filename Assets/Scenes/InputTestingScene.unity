@@ -285,6 +285,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764402223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &931358374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 931358377}
+  - component: {fileID: 931358376}
+  - component: {fileID: 931358375}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &931358375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931358374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ee320f1524bc043bf56714e9bd54ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent:
+    useSOGameEvent: 1
+    soGameEvent: {fileID: 11400000, guid: a3b3d1df52379c24ca5638fbbbe51b6b, type: 2}
+    gameEventFromMono: {fileID: 0}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 931358376}
+        m_MethodName: startCircleIdleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &931358376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931358374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbf0f2818831634ba0d8d398dbc162a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleManager: {fileID: 11400000, guid: 86e4dffd5fd0abf418761c6a5413ba97, type: 2}
+--- !u!4 &931358377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931358374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.431153, y: -2.9149475, z: -27.039062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1392653649
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +488,7 @@ MonoBehaviour:
     normalTypeVariable: 1
     _SOVariable: {fileID: 0}
   circle: {fileID: 1667697476}
-  circleMorphEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
+  morphEndedEvent: {fileID: 11400000, guid: a3b3d1df52379c24ca5638fbbbe51b6b, type: 2}
   stageManager: {fileID: 11400000, guid: 86e4dffd5fd0abf418761c6a5413ba97, type: 2}
   morphTicksPerSec: 10
   circleMorphing: 0
@@ -469,7 +546,7 @@ Transform:
   m_GameObject: {fileID: 1667697470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.9605, y: 7.9605, z: 7.9605}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -581,6 +658,10 @@ MonoBehaviour:
   playerMovement: {fileID: 1816732500}
   playerRigidbody: {fileID: 1816732502}
   slot: 0
+  moveInputThreshhold:
+    useNormalType: 1
+    normalTypeVariable: 0.15
+    _SOVariable: {fileID: 0}
 --- !u!114 &1816732500
 MonoBehaviour:
   m_ObjectHideFlags: 0

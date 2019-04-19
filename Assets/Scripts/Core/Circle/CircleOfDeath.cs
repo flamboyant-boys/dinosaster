@@ -9,7 +9,7 @@ public class CircleOfDeath : MonoBehaviour
     [SerializeField] FloatReference ticksPerSec = new FloatReference(1);
     [SerializeField] FloatReference dmg = new FloatReference(1);
     [SerializeField] Collider2D circle;
-    [SerializeField] GameEvent circleMorphEvent;
+    [SerializeField] GameEvent morphEndedEvent;
     [SerializeField] CircleStageManager stageManager;
     [SerializeField] float morphTicksPerSec = 10;
 
@@ -41,7 +41,6 @@ public class CircleOfDeath : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("dealDamage", 0, 1 / ticksPerSec.Value);
-
     }
 
     private void Update()
@@ -62,15 +61,15 @@ public class CircleOfDeath : MonoBehaviour
         newSize = new Vector3(newRadius, newRadius, newRadius);
         toatalSizeDifference = originalSize.x - newRadius;
         morphSpeed = toatalSizeDifference/morphTime;
-
-
     }
+    
 
     private void morphCircle()
     {
 
-        if (Time.time >= morphEndTime)
+        if (Time.time >= morphEndTime && circleMorphing == true)
         {
+            morphEndedEvent.Raise();
             circleMorphing = false;
         }
         else
@@ -85,9 +84,6 @@ public class CircleOfDeath : MonoBehaviour
             transform.localScale = Vector3.Lerp(originalSize, newSize, fracJourney);
 
         }
-
-
-
     }
 
 
