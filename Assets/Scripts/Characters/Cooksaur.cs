@@ -33,10 +33,20 @@ namespace Characters
         {
             baseAttack.Init(this.gameObject.transform, attackCollider);
             specialAttack.Init(this.gameObject.transform, attackCollider);
+<<<<<<< HEAD
             rb = this.GetComponent<Rigidbody2D>();
             animator = this.GetComponent<Animator>();
             GetComponent<Movement>().CanMove = true;
             GetComponent<Movement>().CanRotate = true;
+=======
+
+            rb = this.GetComponent<Rigidbody2D>();
+            animator = this.GetComponent<Animator>();
+
+            GetComponent<Movement>().CanMove = true;
+            GetComponent<Movement>().CanRotate = true;
+
+>>>>>>> a1bebc9d8c9e56084846148b47adadb7ad9dbbe2
             Init("Cooksaur");
         }
 
@@ -69,6 +79,10 @@ namespace Characters
             {
                 animator.SetBool("IsMoving", true);
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1bebc9d8c9e56084846148b47adadb7ad9dbbe2
         }
 
         private void OnDrawGizmos()
