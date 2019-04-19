@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbfc5e3b05385941a1443c89f854453, type: 3}
   m_Name: Death Particles
   m_EditorClassIdentifier: 
-  particleSystem1: {fileID: 0}
-  particleSystem2: {fileID: 0}
+  particleSystem1: {fileID: 7215704455227346198, guid: d1e695a559f12da48ae4ad7d4c4568b1,
+    type: 3}
+  particleSystem2: {fileID: 6048689929193839296, guid: 263e957c8416213489f550f9f5a4aeff,
+    type: 3}

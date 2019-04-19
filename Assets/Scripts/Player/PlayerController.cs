@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public Material flashWhiteMat;
 
+    public ParticleContainer particleContainer;
+
     private Material baseMat;
     private SpriteRenderer spriteRenderer;
  
@@ -122,9 +124,10 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void getDamage(GameObject damageDealer, float damage)
     {
+        StartCoroutine(DamageFX());
+
         currentPercent += damage;
         Debug.Log("Got damage!");
-        StartCoroutine(DamageFX());
 
         playerRigidbody.mass = currMass();
 
@@ -137,6 +140,16 @@ public class PlayerController : MonoBehaviour, IDamagable
     public void die(GameObject damageDealer)
     {
         GameManager.Instance.OnPlayerDeath(this);
+
+        if (GetComponent<Cooksaur>())
+        {
+            Instantiate(particleContainer.particleSystem1, transform.position, transform.rotation);
+        }
+        else if (GetComponent<Chargesaur>())
+        {
+            Instantiate(particleContainer.particleSystem2, transform.position, transform.rotation);
+        }
+
     }
 
     private IEnumerator DamageFX()

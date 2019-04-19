@@ -770,12 +770,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679441316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176037e69c073d249888188113c48f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players: []
+  uiPrefab: {fileID: 0}
+  uiParent: {fileID: 0}
+  maxStock: 3
 --- !u!4 &679441318
 Transform:
   m_ObjectHideFlags: 0
@@ -877,6 +879,12 @@ PrefabInstance:
       propertyPath: flashWhiteMat
       value: 
       objectReference: {fileID: 2100000, guid: e2b728e0f903dc047bcb4b8f634091c6, type: 2}
+    - target: {fileID: 4096375146346950871, guid: 6eb6de2c60ace0e44aec8bbde18ad3b8,
+        type: 3}
+      propertyPath: particleContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 10def8d0dbb0a9d43a3bef580c0a3ff1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb6de2c60ace0e44aec8bbde18ad3b8, type: 3}
 --- !u!1001 &1192572092
@@ -956,6 +964,12 @@ PrefabInstance:
       propertyPath: slot
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 8984644987451409102, guid: bd345abc16549c4409cb6d75805b4db1,
+        type: 3}
+      propertyPath: particleContainer
+      value: 
+      objectReference: {fileID: 11400000, guid: 10def8d0dbb0a9d43a3bef580c0a3ff1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd345abc16549c4409cb6d75805b4db1, type: 3}
 --- !u!1 &1300909010
