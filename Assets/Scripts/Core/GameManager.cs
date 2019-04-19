@@ -111,8 +111,6 @@ public class GameManager : MonoBehaviour
         startCircleIdleState();
     }
 
-
-
     private void Update()
     {
         updateCircle();
