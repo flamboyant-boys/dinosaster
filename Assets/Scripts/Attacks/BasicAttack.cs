@@ -22,6 +22,8 @@ namespace Characters
                 // Check if its the same collider as the parentObj
                 if(!col.name.Equals(parentObject.name))
                 {
+                Debug.Log(col.name);
+                    
                     if(col.GetComponent<IDamagable>() != null)
                     {
                         col.GetComponent<IDamagable>().getDamage(parentObject.gameObject, damage);

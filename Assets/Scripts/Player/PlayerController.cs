@@ -72,7 +72,6 @@ public class PlayerController : MonoBehaviour, IDamagable
         if (Sinput.GetButtonDown("BasicAttack", slot))
         {
             warrior.startBasicAttack();
-            Debug.Log("Basic");
         }
 
 

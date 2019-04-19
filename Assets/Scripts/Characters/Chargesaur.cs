@@ -35,6 +35,7 @@ namespace Characters
             rb = GetComponent<Rigidbody2D>();
 
             chargeCollider.enabled = false;
+            Init("Chargesaur");
         }
 
         // Update is called once per frame
