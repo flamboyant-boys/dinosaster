@@ -32,13 +32,15 @@ public class GameController : MonoBehaviour
 
     public void playerDies(GameObject who) 
     {
-        foreach(Player p in players)
-        {
-            if(p.LivingEntity.Name.Equals(who.GetComponent<LivingEntity>().Name))
-            {
-                p.decreaseStock(1);
-            }
-        }
+        Debug.Log(who.name + " Lost the Game!");
+
+        //foreach(Player p in players)
+        //{
+        //    if(p.LivingEntity.Name.Equals(who.GetComponent<LivingEntity>().Name))
+        //    {
+        //        p.decreaseStock(1);
+        //    }
+        //}
     }
 
     // Update is called once per frame

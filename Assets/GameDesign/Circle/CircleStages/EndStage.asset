@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: This is a state
   correspondingEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
-  circleRadius: 3
+  circleRadius: 10
   morphTime: 10
   idleTime: 2
