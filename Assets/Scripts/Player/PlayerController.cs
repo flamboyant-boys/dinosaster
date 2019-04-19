@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
         playerRigidbody.mass = currMass();
 
-        if(currentPercent > maxPercent.Value)
+        if(currentPercent >= maxPercent.Value)
         {
             die(damageDealer);
         }

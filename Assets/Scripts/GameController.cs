@@ -36,10 +36,22 @@ public class GameController : MonoBehaviour
 
     public void Win(LivingEntity who)
     {
+<<<<<<< HEAD
         Time.timeScale = 0;
 
         winUI.SetActive(true);
         winUI.GetComponentInChildren<TextMeshProUGUI>().text = who.Name + " won!";
+=======
+        Debug.Log(who.name + " Lost the Game!");
+
+        //foreach(Player p in players)
+        //{
+        //    if(p.LivingEntity.Name.Equals(who.GetComponent<LivingEntity>().Name))
+        //    {
+        //        p.decreaseStock(1);
+        //    }
+        //}
+>>>>>>> f52628938b1e08a1df807ed4acdb4373c20757e7
     }
 
     // Update is called once per frame
