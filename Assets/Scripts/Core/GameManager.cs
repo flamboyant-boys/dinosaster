@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Player" + player + " died!");
        
-        player.gameObject.SetActive(false);
+        //player.gameObject.SetActive(false);
     }
 
 

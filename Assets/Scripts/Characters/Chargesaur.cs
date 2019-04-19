@@ -22,7 +22,7 @@ namespace Characters
         private Rigidbody2D rb;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             baseAttack.Init(this.transform, attackCollider);
             specialAttack.Init(this.transform, attackCollider);
@@ -86,11 +86,9 @@ namespace Characters
 
         private IEnumerator StartStun()
         {
-            Debug.Log("Stunned");
             yield return new WaitForSeconds(stunTime);
             movement.CanMove = true;
             movement.CanRotate = true;
-            Debug.Log("End");
         }
 
         private IEnumerator StartChargeTimer()
