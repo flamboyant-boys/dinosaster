@@ -22,15 +22,13 @@ public class Movement : MonoBehaviour
 
     public void move(Vector2 direction)
     {
-<<<<<<< HEAD
         MovingObject.velocity = direction * movementSpeed;
 
         var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-=======
+
         MovingObject.velocity = direction *movementSpeed;
         look(direction);
->>>>>>> 8807628170df7d68b904b5ce23092dcf71ccf8a0
     }
 
     public void move(float horizontal, float vertical)
