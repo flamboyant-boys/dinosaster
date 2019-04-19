@@ -6,7 +6,7 @@ namespace Characters
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
-    public class Cooksaur : LivingEntity, IDamagable, IWarrior
+    public class Cooksaur : LivingEntity, IWarrior
     {
         public BaseAttack baseAttack;
         public BaseAttack specialAttack;
@@ -19,15 +19,6 @@ namespace Characters
         private Animator animator;
         private Rigidbody2D rb;
 
-        void IDamagable.die(GameObject damageDealer)
-        {
-            //throw new System.NotImplementedException();
-        }
-
-        void IDamagable.getDamage(GameObject damageDealer, float damage)
-        {
-            //throw new System.NotImplementedException();
-        }
 
         private void Start()
         {
@@ -43,25 +34,6 @@ namespace Characters
 
         private void Update()
         {
-            //if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
-            //{
-            //    baseAttack.Attack();
-            //    animator.SetTrigger("BaseAttack");
-            //}
-
-            //if (Sinput.GetButton("SpecialAttack", slot))
-            //{
-            //    blockBasic = true;
-            //    specialAttack.Attack();
-            //}
-
-            //if (Sinput.GetButtonUp("SpecialAttack", slot))
-            //{
-            //    specialAttack.AttackEnd();
-            //    blockBasic = false;
-            //    animator.SetTrigger("SpecialAttack");
-            //}
-
             if (Mathf.Round(rb.velocity.magnitude) >= -1 && Mathf.Round(rb.velocity.magnitude) <= 1)
             {
                 animator.SetBool("IsMoving", false);
