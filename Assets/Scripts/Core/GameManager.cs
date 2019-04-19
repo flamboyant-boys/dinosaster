@@ -143,18 +143,27 @@ public class GameManager : MonoBehaviour
 
 public struct PlayerStats
 {
-    public PlayerStats(int totalLifes)
+    public PlayerStats(int totalLifes) 
     {
+        this.playerName = "Default Player";
+        this.totalLifes = totalLifes;
+        currLifes = totalLifes;
+        kills = 0;
+    }
+    public PlayerStats(int totalLifes, string name)
+    {
+        this.playerName = name;
         this.totalLifes = totalLifes;
         currLifes = totalLifes;
         kills = 0;
     }
 
-
+    string playerName;
     int totalLifes;
     int currLifes;
     int kills;
     public int TotalLifes { get => totalLifes; set => totalLifes = value; }
     public int CurrLifes { get => currLifes; set => currLifes = value; }
     public int Kills { get => kills; set => kills = value; }
+    public string PlayerName { get => playerName; set => playerName = value; }
 }
