@@ -31,6 +31,10 @@ namespace Characters
             baseAttack.Init(this.gameObject.transform, attackCollider);
             specialAttack.Init(this.gameObject.transform, attackCollider);
 
+            GetComponent<Movement>().CanMove = true;
+            GetComponent<Movement>().CanRotate = true;
+
+
             Init("Cooksaur");
         }
 

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5543938997595201324}
   - component: {fileID: 5543938997595201327}
   - component: {fileID: 5543938997595201326}
-  - component: {fileID: 5543938997595201325}
   - component: {fileID: 5543938997595201322}
   - component: {fileID: 5543938997595201323}
   - component: {fileID: 5543938997595201320}
@@ -84,32 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!61 &5543938997595201325
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5543938997595201328}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!61 &5543938997595201322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &1970520594164459465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +187,10 @@ MonoBehaviour:
   playerMovement: {fileID: 7807415760846804708}
   playerRigidbody: {fileID: 5543938997595201320}
   slot: 0
+  moveInputThreshhold:
+    useNormalType: 1
+    normalTypeVariable: 0.15
+    _SOVariable: {fileID: 0}
 --- !u!114 &7807415760846804708
 MonoBehaviour:
   m_ObjectHideFlags: 0
