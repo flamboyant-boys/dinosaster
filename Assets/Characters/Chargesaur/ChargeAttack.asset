@@ -15,4 +15,4 @@ MonoBehaviour:
   attackName: TmpAttack
   damage: 10
   knockbackStrength: 2
-  chargeMultiplier: 10
+  chargeMultiplier: 100

@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerController[] possibleCharacters;
     [SerializeField] Dictionary<PlayerController, PlayerStats> players;
 
+    [SerializeField]GameController gC;
+
 
 
     public CircleStageManager GetCircleManager
@@ -127,8 +129,11 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath(PlayerController player)
     {
+
         Debug.Log("Player" + player + " died!");
-       
+
+        gC.Win(player.GetComponent<Characters.LivingEntity>());
+
         //player.gameObject.SetActive(false);
     }
 

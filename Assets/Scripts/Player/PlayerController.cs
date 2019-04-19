@@ -145,6 +145,8 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void die(GameObject damageDealer)
     {
+        
+
         if (GetComponent<Cooksaur>())
         {
             Instantiate(particleContainer.particleSystem1, transform.position, transform.rotation);
@@ -153,6 +155,8 @@ public class PlayerController : MonoBehaviour, IDamagable
         {
             Instantiate(particleContainer.particleSystem2, transform.position, transform.rotation);
         }
+
+        GameManager.Instance.OnPlayerDeath(this);
 
     }
 
