@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Characters;
 
 [RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
@@ -9,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] SinputSystems.InputDeviceSlot slot;
     [SerializeField] FloatReference moveInputThreshhold = new FloatReference(0.15f);
+    [Header("The Class:")]
+    [SerializeField] LivingEntity character;
+    IWarrior warrior;
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
@@ -18,6 +22,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        if (character.GetComponent<IWarrior>() == null)
+        {
+            Debug.LogError("character needs to be of: " + typeof(IWarrior));
+        }
+        else
+        {
+            warrior = character.GetComponent<IWarrior>();
+        }
+
         if (playerMovement == null)
         {
             if (GetComponent<Movement>() == null)
@@ -34,6 +47,30 @@ public class PlayerController : MonoBehaviour
     {
         move();
             
+    }
+
+    private void Update()
+    {
+        attacks();
+    }
+
+    void attacks()
+    {
+        if (Sinput.GetButtonDown("BasicAttack", slot))
+        {
+            warrior.startBasicAttack();
+            Debug.Log("Basic");
+        }
+
+
+
+        if (Sinput.GetButton("SpecialAttack", slot))
+            warrior.startSpecialAttack();
+
+
+        if (Sinput.GetButtonUp("SpecialAttack", slot))
+            warrior.endSpecialAttack();
+
     }
 
     void move()

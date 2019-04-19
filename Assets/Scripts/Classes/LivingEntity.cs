@@ -92,4 +92,11 @@ namespace Characters
         }
         #endregion
     }
+
+    public interface IWarrior
+    {
+        void startBasicAttack();
+        void startSpecialAttack();
+        void endSpecialAttack();
+    }
 }

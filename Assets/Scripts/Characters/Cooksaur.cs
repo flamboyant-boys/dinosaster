@@ -6,7 +6,7 @@ namespace Characters
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
-    public class Cooksaur : LivingEntity, IDamagable
+    public class Cooksaur : LivingEntity, IDamagable, IWarrior
     {
         public BaseAttack baseAttack;
         public BaseAttack specialAttack;
@@ -47,24 +47,24 @@ namespace Characters
 
         private void Update()
         {
-            if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
-            {
-                baseAttack.Attack();
-                animator.SetTrigger("BaseAttack");
-            }
+            //if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
+            //{
+            //    baseAttack.Attack();
+            //    animator.SetTrigger("BaseAttack");
+            //}
 
-            if (Sinput.GetButton("SpecialAttack", slot))
-            {
-                blockBasic = true;
-                specialAttack.Attack();
-            }
+            //if (Sinput.GetButton("SpecialAttack", slot))
+            //{
+            //    blockBasic = true;
+            //    specialAttack.Attack();
+            //}
 
-            if (Sinput.GetButtonUp("SpecialAttack", slot))
-            {
-                specialAttack.AttackEnd();
-                blockBasic = false;
-                animator.SetTrigger("SpecialAttack");
-            }
+            //if (Sinput.GetButtonUp("SpecialAttack", slot))
+            //{
+            //    specialAttack.AttackEnd();
+            //    blockBasic = false;
+            //    animator.SetTrigger("SpecialAttack");
+            //}
 
             if (Mathf.Round(rb.velocity.magnitude) >= -1 && Mathf.Round(rb.velocity.magnitude) <= 1)
             {
@@ -80,6 +80,28 @@ namespace Characters
         {
             Gizmos.color = Color.red;
             //Gizmos.DrawCube(attackCollider.bounds.center, attackCollider.bounds.size);
+        }
+
+        public void startBasicAttack()
+        {
+            if(!blockBasic)
+            {
+                baseAttack.Attack();
+                animator.SetTrigger("BaseAttack");
+            }
+        }
+
+        public void startSpecialAttack()
+        {
+            blockBasic = true;
+            specialAttack.Attack();
+        }
+
+        public void endSpecialAttack()
+        {
+            specialAttack.AttackEnd();
+            blockBasic = false;
+            animator.SetTrigger("SpecialAttack");
         }
     }
 }

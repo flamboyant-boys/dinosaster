@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Characters
 {
-    public class Chargesaur : LivingEntity
+    public class Chargesaur : LivingEntity, IWarrior
     {
         public BaseAttack baseAttack;
         public ChargeAttack specialAttack;
@@ -36,27 +36,27 @@ namespace Characters
         {
             specialAttack.Direction = movement.Direction;
 
-            if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
-            {
-                baseAttack.Attack();
-            }
+            //if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
+            //{
+            //    baseAttack.Attack();
+            //}
 
-            if (Sinput.GetButton("SpecialAttack", slot))
-            {
-                blockBasic = true;
-                movement.CanMove = false;
-                specialAttack.Attack();
-                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            }
+            //if (Sinput.GetButton("SpecialAttack", slot))
+            //{
+            //    blockBasic = true;
+            //    movement.CanMove = false;
+            //    specialAttack.Attack();
+            //    GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            //}
 
-            if (Sinput.GetButtonUp("SpecialAttack", slot))
-            {
-                StartCoroutine("StartChargeTimer");
-                specialAttack.AttackEnd();
+            //if (Sinput.GetButtonUp("SpecialAttack", slot))
+            //{
+            //    StartCoroutine("StartChargeTimer");
+            //    specialAttack.AttackEnd();
 
-                movement.CanRotate = false;
-                blockBasic = false;
-            }
+            //    movement.CanRotate = false;
+            //    blockBasic = false;
+            //}
 
             if(specialAttack.IsCharging)
             {
@@ -106,6 +106,32 @@ namespace Characters
             //Debug.Log("Can Move");
             movement.CanMove = true;
             movement.CanRotate = true;
+        }
+
+        public void startBasicAttack()
+        {
+            if (!blockBasic)
+            {
+                baseAttack.Attack();
+                //animator.SetTrigger("BaseAttack");
+            }
+        }
+
+        public void startSpecialAttack()
+        {
+            blockBasic = true;
+            movement.CanMove = false;
+            specialAttack.Attack();
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        }
+
+        public void endSpecialAttack()
+        {
+            StartCoroutine("StartChargeTimer");
+            specialAttack.AttackEnd();
+
+            movement.CanRotate = false;
+            blockBasic = false;
         }
     }
 
