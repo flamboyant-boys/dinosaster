@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
         if (Sinput.GetButtonDown("BasicAttack", slot))
         {
             warrior.startBasicAttack();
-            Debug.Log("Basic");
         }
 
 
