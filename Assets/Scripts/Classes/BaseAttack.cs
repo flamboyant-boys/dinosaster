@@ -65,7 +65,8 @@ namespace Characters
         /// </summary>
         public virtual void Attack()
         {
-            //OnAttackEvent();
+            if(OnAttackEvent != null)
+                OnAttackEvent();
         }
 
         /// <summary>
@@ -73,7 +74,8 @@ namespace Characters
         /// </summary>
         public virtual void AttackEnd()
         {
-            //OnAttackEndEvent();
+            if(OnAttackEndEvent != null)
+                OnAttackEndEvent();
         }
 
         /// <summary>
