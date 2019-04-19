@@ -10,6 +10,12 @@ public class Movement : MonoBehaviour
     bool canMove = true;
     bool canRotate = true;
 
+    private void Start()
+    {
+        CanMove = true;
+        CanRotate = true;
+    }
+
     public Movement(Rigidbody2D movingObject)
     {
         this.movingObject = movingObject;

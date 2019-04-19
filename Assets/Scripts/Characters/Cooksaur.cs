@@ -56,8 +56,6 @@ namespace Characters
                 specialAttack.AttackEnd();
                 blockBasic = false;
             }
-
-
         }
 
         private void OnDrawGizmos()
