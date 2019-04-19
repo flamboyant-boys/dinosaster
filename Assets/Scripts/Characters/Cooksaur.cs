@@ -16,6 +16,9 @@ namespace Characters
         private bool blockSpecial = false;
         private bool blockBasic = false;
 
+        private Animator animator;
+        private Rigidbody2D rb;
+
         void IDamagable.die(GameObject damageDealer)
         {
             //throw new System.NotImplementedException();
@@ -31,6 +34,9 @@ namespace Characters
             baseAttack.Init(this.gameObject.transform, attackCollider);
             specialAttack.Init(this.gameObject.transform, attackCollider);
 
+            rb = this.GetComponent<Rigidbody2D>();
+            animator = this.GetComponent<Animator>();
+
             Init("Cooksaur");
         }
 
@@ -39,6 +45,7 @@ namespace Characters
             if (!blockSpecial && Sinput.GetButtonDown("BasicAttack", slot))
             {
                 baseAttack.Attack();
+                animator.SetTrigger("BaseAttack");
             }
 
             if (Sinput.GetButton("SpecialAttack", slot))
@@ -51,9 +58,17 @@ namespace Characters
             {
                 specialAttack.AttackEnd();
                 blockBasic = false;
+                animator.SetTrigger("SpecialAttack");
             }
 
-
+            if (Mathf.Round(rb.velocity.magnitude) >= -1 && Mathf.Round(rb.velocity.magnitude) <= 1)
+            {
+                animator.SetBool("IsMoving", false);
+            }
+            else
+            {
+                animator.SetBool("IsMoving", true);
+            }
         }
 
         private void OnDrawGizmos()

@@ -1,0 +1,701 @@
+fileFormatVersion: 2
+guid: f8802d5e764466946936068205b9ffa8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4733527291417508356
+    second: Grass Tilemap_0
+  - first:
+      213: -1058252534653787666
+    second: Grass Tilemap_1
+  - first:
+      213: -6919416490504398125
+    second: Grass Tilemap_2
+  - first:
+      213: 2844846454887434234
+    second: Grass Tilemap_3
+  - first:
+      213: 1705397497621242908
+    second: Grass Tilemap_4
+  - first:
+      213: -3385724240195142813
+    second: Grass Tilemap_5
+  - first:
+      213: -1664015602534567648
+    second: Grass Tilemap_6
+  - first:
+      213: 8762424065751881767
+    second: Grass Tilemap_7
+  - first:
+      213: -6895001473969496673
+    second: Grass Tilemap_8
+  - first:
+      213: 8648113162920651741
+    second: Grass Tilemap_9
+  - first:
+      213: 953931739347595142
+    second: Grass Tilemap_10
+  - first:
+      213: 4597230568547635940
+    second: Grass Tilemap_11
+  - first:
+      213: 3330939046563586161
+    second: Grass Tilemap_12
+  - first:
+      213: 7361408142274396815
+    second: Grass Tilemap_13
+  - first:
+      213: 4191339217170315275
+    second: Grass Tilemap_14
+  - first:
+      213: 2003733005671518863
+    second: Grass Tilemap_15
+  - first:
+      213: 8815046854676740819
+    second: Grass Tilemap_16
+  - first:
+      213: 4540785558284423774
+    second: Grass Tilemap_17
+  - first:
+      213: 757160784258171235
+    second: Grass Tilemap_18
+  - first:
+      213: -5087776341479802250
+    second: Grass Tilemap_19
+  - first:
+      213: -1536932369263940118
+    second: Grass Tilemap_20
+  - first:
+      213: -110008034311077244
+    second: Grass Tilemap_21
+  - first:
+      213: 4501322638076395667
+    second: Grass Tilemap_22
+  - first:
+      213: 6213387095352889402
+    second: Grass Tilemap_23
+  - first:
+      213: 3392356424437887791
+    second: Grass Tilemap_24
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 392
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Grass Tilemap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4724.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd9b2170cf6cd540ab9188a48c3d8f5
+      internalID: 4733527291417508356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 4724.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1989ce98a40d2e449998a4f1ed52d95b
+      internalID: -1058252534653787666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 4724.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900239a02a485334ba0871440f7bdf7e
+      internalID: -6919416490504398125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 4724.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e83e214f762a54b89a22a53e9f30f4
+      internalID: 2844846454887434234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 4724
+        y: 4724.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0657b2f5bff598e4782a4b80798d1e90
+      internalID: 1705397497621242908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3543.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34e7aeb0dc2fed438f6548cfd0d0549
+      internalID: -3385724240195142813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_6
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 3543.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622841591ee826243a9ccb458738c56b
+      internalID: -1664015602534567648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 3543.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17d7888818f5c4e4580a320b4b5e0741
+      internalID: 8762424065751881767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 3543.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c40bfc8dc331847b01e0595b515abe
+      internalID: -6895001473969496673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_9
+      rect:
+        serializedVersion: 2
+        x: 4724
+        y: 3543.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfb74b78c846ae409e7db45dbde6ae2
+      internalID: 8648113162920651741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2362.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f664c7b9c60ed4aa18123797081bba
+      internalID: 953931739347595142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_11
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 2362.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b181e1d2edfcb9b4c836dfa2c5d44c29
+      internalID: 4597230568547635940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 2362.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569dd5c8b01bbe748bcaba68e0aedd6a
+      internalID: 3330939046563586161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 2362.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8037cdca33efef49949963049cf24d5
+      internalID: 7361408142274396815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 4724
+        y: 2362.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d649df7722111142bf775ee5e39d10c
+      internalID: 4191339217170315275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1181.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af25c1edd550f84ba5ac45c0d6bd7ea
+      internalID: 2003733005671518863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 1181.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a6688548d2d5cc4a9adef4eeed724f6
+      internalID: 8815046854676740819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 1181.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f719eb233803c7249beb8671cbf36234
+      internalID: 4540785558284423774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 1181.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85084c493dd7344b895cbbee316e5ab
+      internalID: 757160784258171235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 4724
+        y: 1181.8
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03331acb0c7e994690fefd2b3c4d553
+      internalID: -5087776341479802250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.8000488
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1aa3f55cf544ed46b1100f1a5cbb88b
+      internalID: -1536932369263940118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 0.8000488
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59b963644ec9cb46a00a3e78d50d29d
+      internalID: -110008034311077244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 0.8000488
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5215f58ddc50b1743ae066130de4cb90
+      internalID: 4501322638076395667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 3543
+        y: 0.8000488
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74714864f551ab4dbbc8401e847ff2a
+      internalID: 6213387095352889402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass Tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 4724
+        y: 0.8000488
+        width: 1181.2
+        height: 1181.2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72f93c7e46b28443987028168b5b28e
+      internalID: 3392356424437887791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 610b6ce9dd2e6c44081360c07901aecd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
