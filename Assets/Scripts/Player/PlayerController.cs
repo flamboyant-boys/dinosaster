@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] float currentPercent;
     [SerializeField] FloatReference maxPercent = new FloatReference(50);
 
+    public Material flashWhiteMat;
+
+    private Material baseMat;
+    private SpriteRenderer spriteRenderer;
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
@@ -45,6 +49,9 @@ public class PlayerController : MonoBehaviour, IDamagable
         }
 
         playerMovement.MovingObject = playerRigidbody;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        baseMat = spriteRenderer.material;
     }
 
     // Update is called once per frame
@@ -109,6 +116,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     {
         currentPercent += damage;
         Debug.Log("Got damage!");
+        StartCoroutine(DamageFX());
         if(currentPercent > maxPercent.Value)
         {
             die(damageDealer);
@@ -118,6 +126,27 @@ public class PlayerController : MonoBehaviour, IDamagable
     public void die(GameObject damageDealer)
     {
         GameManager.Instance.OnPlayerDeath(this);
+    }
+
+    private IEnumerator DamageFX()
+    {
+        float flashTime = 0.06f;
+
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = flashWhiteMat;
+        yield return new WaitForSeconds(flashTime);
+        spriteRenderer.material = baseMat;
     }
 }
 
