@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     {
         GameObject newPlayer = Instantiate(playerPrefab);
         PlayerController pc = newPlayer.AddComponent<PlayerController>();
-        pc.initialize(slot, newPlayer.GetComponent<Rigidbody2D>());
+        //pc.initialize(slot, newPlayer.GetComponent<Rigidbody2D>());
         return pc;
     }
 }

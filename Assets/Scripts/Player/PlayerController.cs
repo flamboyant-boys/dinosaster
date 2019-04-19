@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour, IDamagable
     [SerializeField] float debugMass = 5;
  
 
-    public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
+    public void initialize(SinputSystems.InputDeviceSlot slot)
     {
         this.slot = slot;
-        playerRigidbody = playerObj;
+        playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     float currMass()
