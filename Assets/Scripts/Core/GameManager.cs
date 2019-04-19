@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
     public void OnPlayerDeath(PlayerController player)
     {
         Debug.Log("Player" + player + " died!");
+       
         player.gameObject.SetActive(false);
     }
 

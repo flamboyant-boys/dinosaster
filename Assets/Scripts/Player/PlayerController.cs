@@ -109,6 +109,12 @@ public class PlayerController : MonoBehaviour, IDamagable
         set
         {
             currentPercent = value;
+        } 
+    }
+
+    public float getCurrentPercent {
+        get {
+            return currentPercent;
         }
     }
 
@@ -129,6 +135,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void die(GameObject damageDealer)
     {
+        Transform.FindObjectOfType<GameController>().playerDies(this.gameObject);
         GameManager.Instance.OnPlayerDeath(this);
     }
 }
