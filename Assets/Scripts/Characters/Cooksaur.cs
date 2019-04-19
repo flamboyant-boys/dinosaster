@@ -40,7 +40,7 @@ namespace Characters
 
         private void Update()
         {
-            if (!blockSpecial && Sinput.GetButtonDown("BasicAttack", slot))
+            if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
             {
                 baseAttack.Attack();
             }

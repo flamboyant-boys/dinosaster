@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 2587007098465824097}
   - component: {fileID: 2587007098465824098}
   - component: {fileID: 2587007098465824101}
+  - component: {fileID: 5414476830960794769}
   - component: {fileID: 2587007098465824103}
   - component: {fileID: 8984644987451409102}
   - component: {fileID: 238516362441368747}
+  - component: {fileID: 43722685257349796}
   m_Layer: 0
   m_Name: Chargesaur
   m_TagString: Untagged
@@ -134,6 +136,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!61 &5414476830960794769
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587007098465824127}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 1}
+  m_EdgeRadius: 0
 --- !u!50 &2587007098465824103
 Rigidbody2D:
   serializedVersion: 4
@@ -191,3 +219,20 @@ MonoBehaviour:
     normalTypeVariable: 4
     _SOVariable: {fileID: 0}
   movingObject: {fileID: 2587007098465824103}
+--- !u!114 &43722685257349796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587007098465824127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffddd4e07bebe4342b515234298b3bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseAttack: {fileID: 11400000, guid: dc30ec2ba1e92394c9e75e2284d7b9c2, type: 2}
+  specialAttack: {fileID: 11400000, guid: f2a80a21917fb264182cf87e7f3291a3, type: 2}
+  attackCollider: {fileID: 2587007098465824101}
+  chargeCollider: {fileID: 5414476830960794769}
+  slot: 0

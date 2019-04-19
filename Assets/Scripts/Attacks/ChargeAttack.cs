@@ -23,7 +23,7 @@ namespace Characters
         {
             Vector2 dir = direction.normalized * currentCharge;
             parentObject.GetComponent<Rigidbody2D>().AddForce(dir);
-
+            isCharging = true;
             currentCharge = 0;
 
             base.AttackEnd();
@@ -38,6 +38,7 @@ namespace Characters
 
         public bool IsCharging {
             get { return isCharging; }
+            set { isCharging = value; }
         }
 
         public Vector2 Direction {

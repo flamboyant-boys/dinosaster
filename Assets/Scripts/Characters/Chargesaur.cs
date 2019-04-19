@@ -9,6 +9,8 @@ namespace Characters
         public BaseAttack baseAttack;
         public ChargeAttack specialAttack;
         public Collider2D attackCollider;
+        public Collider2D chargeCollider;
+        public float stunTime = 2f;
         [SerializeField] SinputSystems.InputDeviceSlot slot;
 
         private bool blockSpecial = false;
@@ -25,6 +27,8 @@ namespace Characters
             movement = GetComponent<Movement>();
             movement.CanMove = true;
             movement.CanRotate = true;
+
+            chargeCollider.enabled = false;
         }
 
         // Update is called once per frame
@@ -32,7 +36,7 @@ namespace Characters
         {
             specialAttack.Direction = movement.Direction;
 
-            if (!blockSpecial && Sinput.GetButtonDown("BasicAttack", slot))
+            if (!blockBasic && Sinput.GetButtonDown("BasicAttack", slot))
             {
                 baseAttack.Attack();
             }
@@ -53,6 +57,46 @@ namespace Characters
                 movement.CanRotate = false;
                 blockBasic = false;
             }
+
+            if(specialAttack.IsCharging)
+            {
+                attackCollider.enabled = false;
+                chargeCollider.enabled = true;
+            } else
+            {
+                attackCollider.enabled = true;
+                chargeCollider.enabled = false;
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.transform.name != this.transform.name)
+            {
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                StopCoroutine("StartChargeTimer");
+
+                if(!collision.transform.CompareTag("Player"))
+                {
+                    StartCoroutine("StartStun");
+                } else
+                {
+                    movement.CanMove = true;
+                    movement.CanRotate = true;
+                }
+
+                
+                specialAttack.IsCharging = false;
+            }
+        }
+
+        private IEnumerator StartStun()
+        {
+            Debug.Log("Stunned");
+            yield return new WaitForSeconds(stunTime);
+            movement.CanMove = true;
+            movement.CanRotate = true;
+            Debug.Log("End");
         }
 
         private IEnumerator StartChargeTimer()
@@ -60,13 +104,6 @@ namespace Characters
             //Debug.Log((specialAttack.CurrentCharge * Time.deltaTime) / 10);
             yield return new WaitForSeconds((specialAttack.CurrentCharge * Time.deltaTime) / 10);
             //Debug.Log("Can Move");
-            movement.CanMove = true;
-            movement.CanRotate = true;
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            StopCoroutine("StartChargeTimer");
             movement.CanMove = true;
             movement.CanRotate = true;
         }
