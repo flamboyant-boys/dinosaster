@@ -16,4 +16,4 @@ MonoBehaviour:
   correspondingEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
   circleRadius: 10
   morphTime: 4
-  idleTime: 2
+  idleTime: 6

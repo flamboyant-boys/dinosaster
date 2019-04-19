@@ -15,5 +15,5 @@ MonoBehaviour:
   description: This is a state
   correspondingEvent: {fileID: 11400000, guid: 19fab7d2282e7c24a96e81e62ad88476, type: 2}
   circleRadius: 8
-  morphTime: 1
-  idleTime: 2
+  morphTime: 3
+  idleTime: 6
