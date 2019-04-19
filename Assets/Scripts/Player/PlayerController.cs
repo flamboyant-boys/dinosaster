@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Movement playerMovement;
     [SerializeField] Rigidbody2D playerRigidbody;
     [SerializeField] SinputSystems.InputDeviceSlot slot;
+    [SerializeField] FloatReference moveInputThreshhold = new FloatReference(0.15f);
 
     public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
     {
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         move();
             
@@ -37,7 +38,11 @@ public class PlayerController : MonoBehaviour
 
     void move()
     {
-        playerMovement.move(Sinput.GetAxis("Horizontal"), Sinput.GetAxis("Vertical"));
+        float horizontal, vertical;
+        horizontal = Sinput.GetAxis("Horizontal", slot);
+        vertical = Sinput.GetAxis("Vertical", slot);
+        if(Mathf.Abs(horizontal) >= moveInputThreshhold || Mathf.Abs(vertical) >= moveInputThreshhold)
+            playerMovement.move(Sinput.GetAxis("Horizontal", slot), Sinput.GetAxis("Vertical", slot));
     }
 }
 
