@@ -194,7 +194,12 @@ MonoBehaviour:
     useNormalType: 1
     normalTypeVariable: 0.15
     _SOVariable: {fileID: 0}
-  character: {fileID: 0}
+  character: {fileID: 3474721100017297311}
+  currentPercent: 0
+  maxPercent:
+    useNormalType: 1
+    normalTypeVariable: 50
+    _SOVariable: {fileID: 0}
 --- !u!114 &5132275227603572402
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -158,6 +158,11 @@ MonoBehaviour:
     normalTypeVariable: 0.15
     _SOVariable: {fileID: 0}
   character: {fileID: 43722685257349796}
+  currentPercent: 0
+  maxPercent:
+    useNormalType: 1
+    normalTypeVariable: 50
+    _SOVariable: {fileID: 0}
 --- !u!114 &238516362441368747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffddd4e07bebe4342b515234298b3bf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseAttack: {fileID: 11400000, guid: dc30ec2ba1e92394c9e75e2284d7b9c2, type: 2}
+  baseAttack: {fileID: 11400000, guid: 11a61e2469dd86841ba82f901c7a87c8, type: 2}
   specialAttack: {fileID: 11400000, guid: f2a80a21917fb264182cf87e7f3291a3, type: 2}
   attackCollider: {fileID: 2587007098465824101}
   chargeCollider: {fileID: 5414476830960794769}

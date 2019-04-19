@@ -50,7 +50,7 @@ public struct Player
 
     public void UpdateStats()
     {
-       
+        TextMesh text = ui.GetComponentInChildren<TextMesh>();
     }
 
     public bool decreaseStock(int ammount)
