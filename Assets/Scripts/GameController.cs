@@ -30,6 +30,17 @@ public class GameController : MonoBehaviour
         }
     }
 
+    public void playerDies(GameObject who) 
+    {
+        foreach(Player p in players)
+        {
+            if(p.LivingEntity.Name.Equals(who.GetComponent<LivingEntity>().Name))
+            {
+                p.decreaseStock(1);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -48,8 +59,10 @@ public struct Player
     public GameObject ui;
 
     private LivingEntity character;
-    private TextMeshProUGUI text;
-    private Image image;
+    private PlayerController controller;
+    private TextMeshProUGUI percent;
+    private TextMeshProUGUI life;
+
 
     public Player(GameObject characterPrefab, int stock, GameObject ui)
     {
@@ -58,8 +71,10 @@ public struct Player
         this.ui = ui;
 
         character = characterPrefab.GetComponent<LivingEntity>();
-        text = ui.GetComponentInChildren<TextMeshProUGUI>();
-        image = ui.GetComponentInChildren<Image>();
+        percent = ui.transform.Find("Percent").GetComponent<TextMeshProUGUI>();
+        life = ui.transform.Find("Life").GetComponent<TextMeshProUGUI>();
+        ui.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = character.Name;
+        controller = characterPrefab.GetComponent<PlayerController>();
     }
 
 
@@ -77,7 +92,9 @@ public struct Player
 
     public void UpdateStats()
     {
-        text.text = character.Percentage.ToString() + "%";
+        percent.text = controller.getCurrentPercent.ToString();
+        life.text = stock.ToString();
+
     }
 
     public bool decreaseStock(int ammount)

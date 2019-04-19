@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour, IDamagable
     private SpriteRenderer spriteRenderer;
  
 
-    public void initialize(SinputSystems.InputDeviceSlot slot, Rigidbody2D playerObj)
+    public void initialize(SinputSystems.InputDeviceSlot slot)
     {
         this.slot = slot;
-        playerRigidbody = playerObj;
+        playerRigidbody = gameObject.GetComponent<Rigidbody2D>();
     }
 
     float currMass()
@@ -118,6 +118,12 @@ public class PlayerController : MonoBehaviour, IDamagable
         set
         {
             currentPercent = value;
+        } 
+    }
+
+    public float getCurrentPercent {
+        get {
+            return currentPercent;
         }
     }
 
@@ -139,6 +145,7 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     public void die(GameObject damageDealer)
     {
+        Transform.FindObjectOfType<GameController>().playerDies(this.gameObject);
         GameManager.Instance.OnPlayerDeath(this);
 
         if (GetComponent<Cooksaur>())
