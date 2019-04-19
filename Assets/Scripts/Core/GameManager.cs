@@ -54,7 +54,8 @@ public class GameManager : MonoBehaviour
     float circleIdleTimeEnd = 0;
     bool changeCircle = false;
 
-    [SerializeField] List<PlayerController> players;
+    [SerializeField] PlayerController[] possibleCharacters;
+    [SerializeField] Dictionary<PlayerController, PlayerStats> players;
 
 
 
@@ -117,6 +118,11 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void joinPlayer(PlayerController playerC, SinputSystems.InputDeviceSlot slot)
+    {
+        playerC.initialize(slot);
+
+    }
 
 
     public void OnPlayerDeath(PlayerController player)
@@ -144,6 +150,7 @@ public struct PlayerStats
 {
     public PlayerStats(int totalLifes) 
     {
+        playerC = null;
         this.playerName = "Default Player";
         this.totalLifes = totalLifes;
         currLifes = totalLifes;
@@ -151,12 +158,14 @@ public struct PlayerStats
     }
     public PlayerStats(int totalLifes, string name)
     {
+        playerC = null;
         this.playerName = name;
         this.totalLifes = totalLifes;
         currLifes = totalLifes;
         kills = 0;
     }
 
+    PlayerController playerC;
     string playerName;
     int totalLifes;
     int currLifes;
@@ -165,4 +174,5 @@ public struct PlayerStats
     public int CurrLifes { get => currLifes; set => currLifes = value; }
     public int Kills { get => kills; set => kills = value; }
     public string PlayerName { get => playerName; set => playerName = value; }
+    public PlayerController PlayerC { get => playerC; set => playerC = value; }
 }
