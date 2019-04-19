@@ -59,7 +59,7 @@ namespace Characters
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawCube(attackCollider.bounds.center, attackCollider.bounds.size);
+            //Gizmos.DrawCube(attackCollider.bounds.center, attackCollider.bounds.size);
         }
     }
 }

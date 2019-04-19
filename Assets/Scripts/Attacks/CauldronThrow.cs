@@ -10,7 +10,7 @@ namespace Characters
         [SerializeField] private GameObject cauldron;
         [SerializeField] private float throwMultiplayer;
         private float strength = 0f;
-        private bool canThrow = true;
+        public bool canThrow = true;
 
         public override void Attack()
         {
@@ -18,6 +18,12 @@ namespace Characters
 
             strength += throwMultiplayer;
             base.Attack();
+        }
+
+        public override void Init(Transform parentObject, Collider2D attackCollider)
+        {
+            base.Init(parentObject, attackCollider);
+            canThrow = true;
         }
 
         public override void AttackEnd()
@@ -31,7 +37,7 @@ namespace Characters
 
             if(cauldronInstance.GetComponent<Rigidbody2D>() != null)
             {   
-                Vector2 direction = parentObject.transform.up * strength;
+                Vector2 direction = parentObject.transform.right * strength;
 
                 cauldronInstance.GetComponent<Rigidbody2D>().AddForce(direction);
                 cauldronInstance.GetComponent<Cauldron>().startThrowing(this);

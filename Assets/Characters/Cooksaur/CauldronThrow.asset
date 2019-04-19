@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: CauldronThrow
   damage: 10
-  knockbackStrength: 10
+  knockbackStrength: 100
   cauldron: {fileID: 3889014292730370356, guid: 2e268b501fd36e942adf3ecf53d12c9a,
     type: 3}
   throwMultiplayer: 10
+  canThrow: 0

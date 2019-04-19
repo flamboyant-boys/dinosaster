@@ -548,6 +548,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5543938997595201322, guid: 6c28f5bba4490eb46a37c4e4a2dbbdb2,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543938997595201322, guid: 6c28f5bba4490eb46a37c4e4a2dbbdb2,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5543938997595201323, guid: 6c28f5bba4490eb46a37c4e4a2dbbdb2,
         type: 3}
       propertyPath: m_Enabled
@@ -556,7 +566,7 @@ PrefabInstance:
     - target: {fileID: 5543938997595201320, guid: 6c28f5bba4490eb46a37c4e4a2dbbdb2,
         type: 3}
       propertyPath: m_Constraints
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5543938997595201320, guid: 6c28f5bba4490eb46a37c4e4a2dbbdb2,
         type: 3}

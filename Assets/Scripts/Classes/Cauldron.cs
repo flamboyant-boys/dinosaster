@@ -13,6 +13,7 @@ namespace Characters
         public ContactFilter2D filter;
 
         public bool allowPickup = false;
+        private bool canKnockback = true;
 
         private void Awake()
         {
@@ -27,7 +28,7 @@ namespace Characters
 
         private void Update()
         {
-            if(rgbd.velocity.x <= 0.1f && rgbd.velocity.y <= 0.1f)
+            if(Mathf.Abs(rgbd.velocity.x) <= 0.1f && Mathf.Abs(rgbd.velocity.y) <= 0.1f)
             {
                 rgbd.velocity = Vector3.zero;
 
@@ -46,6 +47,8 @@ namespace Characters
 
         private void StartKnockback()
         {
+            if (!canKnockback) return;
+
             List<Collider2D> results = new List<Collider2D>();
             int count = col.OverlapCollider(filter, results);
 
@@ -68,6 +71,7 @@ namespace Characters
             }
 
             allowPickup = true;
+            canKnockback = false;
         }
 
     }
